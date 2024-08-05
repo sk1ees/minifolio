@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    font-family: "Inter", sans-serif;
+}
+
+.borderColor {
+
+    border: 2px solid #2c2c2c;
+}
+
+.homecss {
+
+    grid-template-rows: repeat(1, 300px 400px 400px 200px 90px 90px);
+}
+
+.aboutcss {
+
+    grid-template-rows: repeat(1, 400px 500px 500px 150px 400px 200px 100px 180px);
+}
+
+.projectcss {
+    grid-template-rows: repeat(1, 300px 600px 200px 300px 200px 100px 180px);
+}
+
+.skillcss {
+    grid-template-rows: repeat(1, 300px 400px 200px 100px 180px);
+}
+
+.projects {
+    grid-template-rows: repeat(1, 90px 1fr);
+}
+
+.aboutme {
+    grid-template-rows: repeat(1, 50px 1fr);
+
+}
+
+.aboutmeRight {
+    grid-template-columns: repeat(1, 1fr 220px);
+}
+
+.profilePic {
+    background-image: url('https://framerusercontent.com/images/dDnqkzQfB3pmvEdrFSxAJSkAyyk.png');
+    background-size: cover;
+}
+
+.gridHomeTemplate {
+    grid-template-columns: repeat(1, 1fr 50px);
+}

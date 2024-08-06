@@ -1,8 +1,8 @@
 {
+  "homepage": "https://sk1ees.github.io/minifolio",
   "name": "mini-folio",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://sk1ees.github.io/minifolio/mini-folio",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",

@@ -11,24 +11,32 @@
 
 .homecss {
 
-    grid-template-rows: repeat(1, 300px 400px 400px 200px 90px 90px);
+    grid-template-rows: repeat(1, 300px 400px 300px 200px 90px 90px);
 }
 
 .aboutcss {
 
-    grid-template-rows: repeat(1, 400px 500px 500px 150px 400px 200px 100px 180px);
+    grid-template-rows: repeat(1, 350px 500px 460px 170px 250px 200px 100px 100px);
 }
 
 .projectcss {
-    grid-template-rows: repeat(1, 300px 600px 200px 300px 200px 100px 180px);
+    grid-template-rows: repeat(1, 230px 600px 100px 200px 100px 100px);
 }
 
 .skillcss {
-    grid-template-rows: repeat(1, 300px 400px 200px 100px 180px);
+    grid-template-rows: repeat(1, 230px 600px 200px 100px 100px);
+}
+
+.skillcssChild {
+    grid-template-rows: repeat(1, 1fr 1fr);
 }
 
 .projects {
     grid-template-rows: repeat(1, 90px 1fr);
+}
+
+.aboutProject {
+    grid-template-rows: repeat(2, 1fr);
 }
 
 .aboutme {
@@ -47,4 +55,9 @@
 
 .gridHomeTemplate {
     grid-template-columns: repeat(1, 1fr 50px);
+}
+
+.aboutImg {
+    background: url('profile.jpeg');
+    background-size: cover;
 }

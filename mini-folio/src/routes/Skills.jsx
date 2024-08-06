@@ -3,6 +3,9 @@ import '../components/Header.css'
 import { FaBehance, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { FiCopy } from 'react-icons/fi';
 import { CiCirclePlus } from 'react-icons/ci';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { Link } from 'react-router-dom';
 const About = () => {
     window.scrollTo(0, 0);
 
@@ -47,11 +50,19 @@ const About = () => {
         {
             image: "https://cdn1.iconfinder.com/data/icons/designer-skills/128/photoshop-512.png",
         },
-      
+
     ]
+    useGSAP(() => {
+        gsap.from('.skillcss', {
+            y: 100,
+            duration: 0.5,
+            opacity: 0,
+
+        })
+    })
     return (
         <>
-            <div className="container w-[100%] borderColor h-auto mt-20 p-4 grid gap-3 skillcss bg-[#212121] m-auto rounded-lg">
+            <div className="container w-[100%] borderColor h-auto mt-24 p-4  grid gap-3 skillcss bg-[#212121] m-auto rounded-lg">
                 <div className=" rounded-lg flex flex-col gap-3 px-1 py-4 mx-4">
                     <div className="">
 
@@ -59,7 +70,7 @@ const About = () => {
 
                             <div className="text-[20px] text-[#C0C0C0] flex gap-3 items-center ">
                                 <div className="box w-[10px] h-[10px] rounded-full bg-[#626262] "></div>
-                                Projects
+                                My Skills
                             </div>
 
                         </div>
@@ -72,7 +83,7 @@ const About = () => {
                     </div>
                 </div>
                 {/* skills  */}
-                <div className="bg-[#2C2C2C] rounded-lg grid gap-6 skillcssChild">
+                <div className="bg-[#2C2C2C] rounded-lg grid gap-6 mx-4 skillcssChild">
                     <div className="">
 
                         <div className=" bg-[#373737] rounded-lg flex mx-4 my-7 justify-between px-9 py-4 items-center">
@@ -84,7 +95,7 @@ const About = () => {
 
                         </div>
 
-                        <div className="flex flex-wrap gap-9 items-center justify-center mx-3  ">
+                        <div className="flex flex-wrap gap-5 items-center justify-center  ">
 
                             {skillsItem.map((item) => (
 
@@ -105,7 +116,7 @@ const About = () => {
 
                         </div>
 
-                        <div className="flex flex-wrap gap-9 items-center justify-center mx-3 ">
+                        <div className="flex flex-wrap gap-5 items-center justify-center mx-3 ">
 
                             {toolItem.map((item) => (
 
@@ -124,7 +135,10 @@ const About = () => {
                         <h1 className='text-[36px] font-semibold'>Let’s work together.</h1>
                         <p className='text-[18px] text-[#BCBCBC]'>Creating user experience and visual appealing design</p>
                         <div className="flex gap-3 mt-2">
-                            <button className='py-2 px-3 rounded-lg bg-[#373737] text-sm font-bold text-white borderColor flex gap-3 items-center '><CiCirclePlus />Hire Me</button>
+                            <Link to={'/contact'}>
+                                <button className='py-2 px-3 rounded-lg bg-[#373737] text-sm font-bold text-white borderColor flex gap-3 items-center '><CiCirclePlus />Hire Me</button>
+                            </Link>
+
                             <button className='py-2 px-3 rounded-lg  text-sm font-bold text-white borderColor flex gap-3 items-center '><FiCopy />Copy Email</button>
                         </div>
                     </div>

@@ -9,6 +9,9 @@ import { FaBehance } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import { MdArrowOutward } from "react-icons/md";
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { Link } from 'react-router-dom';
 const Home = () => {
     window.scrollTo(0, 0);
     const projectData = [
@@ -41,10 +44,17 @@ const Home = () => {
         },
 
     ]
+    useGSAP(() => {
+        gsap.from('.homecss', {
+            y: 100,
+            duration: 0.5,
+            opacity: 0,
 
+        })
+    })
     return (
         <>
-            <div className="container w-[100%] borderColor h-auto mt-20 p-4 grid gap-3 homecss bg-[#212121] m-auto rounded-lg">
+            <div className="container w-[100%] borderColor h-auto mt-24 p-4 grid gap-3 homecss bg-[#212121] m-auto rounded-lg">
                 {/* aboutme  */}
                 <div className=" rounded-lg grid aboutme">
                     {/* aboutme-heading  */}
@@ -67,7 +77,10 @@ const Home = () => {
                             <p className='text-[36px] text-white font-bold '>I’m Deep Sarkar</p>
                             <p className='text-[18px] text-[#BCBCBC]  '>Web Developer from Bengal, IN. Currently pursuing BCA (3rd Year)</p>
                             <div className="flex gap-3 mt-2">
-                                <button className='py-2 px-3 rounded-lg bg-[#373737] text-sm font-bold text-white borderColor flex gap-3 items-center '><CiCirclePlus />Hire Me</button>
+                                <Link to={'/contact'}>
+                                    <button className='py-2 px-3 rounded-lg bg-[#373737] text-sm font-bold text-white borderColor flex gap-3 items-center '>  <CiCirclePlus />Hire Me</button>
+                                </Link>
+
                                 <button className='py-2 px-3 rounded-lg  text-sm font-bold text-white borderColor flex gap-3 items-center '><FiCopy />Copy Email</button>
                             </div>
                         </div>
@@ -86,7 +99,10 @@ const Home = () => {
                             <div className="box w-[10px] h-[10px] rounded-full bg-[#C0C0C0] "></div>
                             Projects
                         </div>
-                        <button className='py-2 px-3 rounded-lg bg-[#373737] text-sm font-bold text-white borderColor flex gap-3 items-center '>View All
+                        <button className='py-2 px-3 rounded-lg bg-[#373737] text-sm font-bold text-white borderColor flex gap-3 items-center '>
+                            <Link to={'/projects'}>
+                                View All
+                            </Link>
                             <div className="text-[#a2a2a2]">
 
                                 <FaArrowRight />
@@ -170,7 +186,10 @@ const Home = () => {
                     <h1 className='text-[36px] font-semibold'>Let’s work together.</h1>
                     <p className='text-[18px] text-[#BCBCBC]'>Creating user experience and visual appealing design</p>
                     <div className="flex gap-3 mt-2">
-                        <button className='py-2 px-3 rounded-lg bg-[#373737] text-sm font-bold text-white borderColor flex gap-3 items-center '><CiCirclePlus />Hire Me</button>
+                        <Link to={'/contact'}>
+                            <button className='py-2 px-3 rounded-lg bg-[#373737] text-sm font-bold text-white borderColor flex gap-3 items-center '><CiCirclePlus />Hire Me</button>
+                        </Link>
+
                         <button className='py-2 px-3 rounded-lg  text-sm font-bold text-white borderColor flex gap-3 items-center '><FiCopy />Copy Email</button>
                     </div>
                 </div>

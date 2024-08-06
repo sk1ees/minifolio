@@ -16,10 +16,14 @@
 
 .aboutcss {
 
-    grid-template-rows: repeat(1, 350px 500px 460px 170px 250px 200px 100px 100px);
+    grid-template-rows: repeat(1, 300px 500px 400px 170px 250px 200px 100px 100px);
 }
 
 .projectcss {
+    grid-template-rows: repeat(1, 230px 600px 100px 200px 100px 100px);
+}
+
+.contactcss {
     grid-template-rows: repeat(1, 230px 600px 100px 200px 100px 100px);
 }
 

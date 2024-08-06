@@ -4,6 +4,9 @@ import { FaBehance, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { FiCopy, FiGithub } from 'react-icons/fi';
 import { CiCirclePlus } from 'react-icons/ci';
 import { IoIosArrowForward } from 'react-icons/io';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { Link } from 'react-router-dom';
 const Project = () => {
   const projectData = [
     {
@@ -33,9 +36,17 @@ const Project = () => {
     },
   ]
   window.scrollTo(0, 0);
+  useGSAP(() => {
+    gsap.from('.projectcss', {
+      y: 100,
+      duration: 0.5,
+      opacity: 0,
+
+    })
+  })
   return (
     <>
-      <div className="container w-[100%] borderColor h-auto mt-20 p-4 grid gap-3 projectcss bg-[#212121] m-auto rounded-lg">
+      <div className="container w-[100%] borderColor h-auto mt-24 p-4 grid gap-3 projectcss bg-[#212121] m-auto rounded-lg">
         <div className=" rounded-lg flex flex-col gap-3 px-1 py-4 mx-4">
           <div className="">
 
@@ -98,7 +109,10 @@ const Project = () => {
             <h1 className='text-[36px] font-semibold'>Let’s work together.</h1>
             <p className='text-[18px] text-[#BCBCBC]'>Creating user experience and visual appealing design</p>
             <div className="flex gap-3 mt-2">
-              <button className='py-2 px-3 rounded-lg bg-[#373737] text-sm font-bold text-white borderColor flex gap-3 items-center '><CiCirclePlus />Hire Me</button>
+              <Link to={'/contact'}>
+                <button className='py-2 px-3 rounded-lg bg-[#373737] text-sm font-bold text-white borderColor flex gap-3 items-center '><CiCirclePlus />Hire Me</button>
+              </Link>
+
               <button className='py-2 px-3 rounded-lg  text-sm font-bold text-white borderColor flex gap-3 items-center '><FiCopy />Copy Email</button>
             </div>
           </div>

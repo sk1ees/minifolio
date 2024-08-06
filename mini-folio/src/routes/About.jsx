@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../components/Header.css'
 import { IoIosArrowForward } from 'react-icons/io';
 import { CiCirclePlus } from 'react-icons/ci';
@@ -8,6 +8,11 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { Link } from 'react-router-dom';
 const About = () => {
+    const [copy, setCopy] = useState('Copy Email');
+
+    function copyClipboard() {
+        navigator.clipboard.writeText('sarkarreall@gmail.com');
+    }
     useGSAP(() => {
         gsap.from('.aboutcss', {
             y: 100,
@@ -22,16 +27,18 @@ const About = () => {
             project: "Awwward Portfolio Design",
             skill: "React , GSAP ",
             url: 'https://framerusercontent.com/images/lkLwoc5QonpfJtmxeyujVtespnI.svg',
+            redirectURL: "https://github.com/sk1ees/portfolio",
         },
         {
             project: "Awwward Website Clone",
             skill: "React , GSAP , FramerMotion",
             url: 'https://framerusercontent.com/images/GYZJhZwKqD1jeRCg4q155yCAVM.svg',
+            redirectURL: "https://sk1ees.github.io/react-modern-website/",
         },
     ]
     return (
         <>
-            <div className="container w-[100%] borderColor h-auto mt-24 p-4 grid gap-3 aboutcss bg-[#212121] m-auto rounded-lg">
+            <div className="container w-[100%] borderColor h-auto mt-24 p-4 grid gap-3 aboutcss bg-[#212121] m-auto rounded-lg ">
                 <div className=" rounded-lg flex flex-col gap-3 px-1 py-4 mx-4">
                     <div className="">
 
@@ -81,7 +88,11 @@ const About = () => {
                                 </div>
 
                             </div>
-                            <div className="flex items-center justify-center text-[25px] text-[#A0A0A0]"><IoIosArrowForward /></div>
+                            <div className="flex items-center justify-center text-[25px] text-[#A0A0A0] cursor-pointer">
+                                <a href={item.redirectURL} target="_blank" rel="noopener noreferrer">
+                                    <IoIosArrowForward />
+                                </a>
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -95,7 +106,7 @@ const About = () => {
                                 <button className='py-2 px-3 rounded-lg bg-[#373737] text-sm font-bold text-white borderColor flex gap-3 items-center '><CiCirclePlus />Hire Me</button>
                             </Link>
 
-                            <button className='py-2 px-3 rounded-lg  text-sm font-bold text-white borderColor flex gap-3 items-center '><FiCopy />Copy Email</button>
+                            <button onClick={() => { setCopy("Copied!"), copyClipboard() }} className='py-2 px-3 rounded-lg  text-sm font-bold text-white borderColor flex gap-3 items-center '><FiCopy />{copy}</button>
                         </div>
                     </div>
                 </div>
@@ -107,10 +118,30 @@ const About = () => {
                         Follow Me
                     </div>
                     <div className="flex gap-3 text-white text-2xl">
-                        <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'><FiGithub /></button>
-                        <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'><FaInstagram /></button>
-                        <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'><FaBehance /></button>
-                        <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'><FaLinkedinIn /></button>
+                        <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'>
+                            <a href="https://github.com/sk1ees" target="_blank" rel="noopener noreferrer">
+                                <FiGithub />
+                            </a>
+                        </button>
+                        <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'>
+                            <a href="https://www.instagram.com/deeeprr/" target="_blank" rel="noopener noreferrer">
+                                <FaInstagram />
+                            </a>
+
+                        </button>
+                        <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'>
+                            <a href="https://www.behance.net/synccr" target="_blank" rel="noopener noreferrer">
+
+                                <FaBehance />
+                            </a>
+                        </button>
+                        <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'>
+                            <a href="https://www.linkedin.com/in/deep-sarkar-92b453245/" target="_blank" rel="noopener noreferrer">
+
+                                <FaLinkedinIn />
+                            </a>
+
+                        </button>
                     </div>
 
                 </div>

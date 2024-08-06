@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../components/Header.css'
 import { FaBehance, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { FiCopy, FiGithub } from 'react-icons/fi';
@@ -8,31 +8,41 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { Link } from 'react-router-dom';
 const Project = () => {
+  const [copy, setCopy] = useState('Copy Email');
+
+  function copyClipboard() {
+      navigator.clipboard.writeText('sarkarreall@gmail.com');
+  }
   const projectData = [
     {
-      project: "Awwward Portfolio Design",
-      skill: "React , GSAP ",
+      project: "MiniFolio Website",
+      skill: "React , GSAP",
       url: 'https://framerusercontent.com/images/lkLwoc5QonpfJtmxeyujVtespnI.svg',
+      redirectURL: "https://github.com/sk1ees/minifolio",
     },
     {
       project: "Awwward Website Clone",
       skill: "React , GSAP , FramerMotion",
       url: 'https://framerusercontent.com/images/11rNeoQ4cbIflUKMKRcTruAT4.svg',
+      redirectURL: "https://github.com/sk1ees/portfolio",
     },
     {
       project: "OCHI Website",
       skill: "React , GSAP , FramerMotion",
       url: 'https://framerusercontent.com/images/GYZJhZwKqD1jeRCg4q155yCAVM.svg',
+      redirectURL: "https://sk1ees.github.io/react-modern-website/",
     },
     {
       project: "AI Virtual Assistant",
       skill: "Python , HTML , CSS , JQuery",
       url: 'https://framerusercontent.com/images/x7OiTJeFKwzIYxxP0CC2nE86Gc.svg',
+      redirectURL: "https://github.com/sk1ees/assistant-kaisen",
     },
     {
       project: "Jumble-Type Game",
       skill: "  HTML , CSS , Javascript",
       url: 'https://framerusercontent.com/images/NPGARQLpwPJCRgkLYdh9gzFYPEU.svg',
+      redirectURL: "https://github.com/sk1ees/jumbleType",
     },
   ]
   window.scrollTo(0, 0);
@@ -85,7 +95,13 @@ const Project = () => {
                 </div>
 
               </div>
-              <div className="flex items-center justify-center text-[25px] text-[#A0A0A0]"><IoIosArrowForward /></div>
+              <div className="flex items-center justify-center text-[25px] text-[#A0A0A0]">
+                <a href={item.redirectURL} target="_blank" rel="noopener noreferrer">
+
+                  <IoIosArrowForward />
+                </a>
+
+              </div>
             </div>
           ))}
 
@@ -96,7 +112,13 @@ const Project = () => {
             Explore all of my works
           </div>
           <div className="flex gap-3 text-white text-2xl">
-            <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'><FiGithub /></button>
+            <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'>
+              <a href="https://github.com/sk1ees" target="_blank" rel="noopener noreferrer">
+
+                <FiGithub />
+              </a>
+
+            </button>
 
           </div>
 
@@ -113,7 +135,7 @@ const Project = () => {
                 <button className='py-2 px-3 rounded-lg bg-[#373737] text-sm font-bold text-white borderColor flex gap-3 items-center '><CiCirclePlus />Hire Me</button>
               </Link>
 
-              <button className='py-2 px-3 rounded-lg  text-sm font-bold text-white borderColor flex gap-3 items-center '><FiCopy />Copy Email</button>
+              <button onClick={() => { setCopy("Copied!"), copyClipboard() }} className='py-2 px-3 rounded-lg  text-sm font-bold text-white borderColor flex gap-3 items-center '><FiCopy />{copy}</button>
             </div>
           </div>
         </div>
@@ -126,13 +148,34 @@ const Project = () => {
           </div>
           <div className="flex gap-3 text-white text-2xl">
 
-            <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'><FaInstagram /></button>
-            <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'><FaBehance /></button>
-            <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'><FaLinkedinIn /></button>
+            <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'>
+              <a href="https://github.com/sk1ees" target="_blank" rel="noopener noreferrer">
+                <FiGithub />
+              </a>
+            </button>
+            <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'>
+              <a href="https://www.instagram.com/deeeprr/" target="_blank" rel="noopener noreferrer">
+                <FaInstagram />
+              </a>
+
+            </button>
+            <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'>
+              <a href="https://www.behance.net/synccr" target="_blank" rel="noopener noreferrer">
+
+                <FaBehance />
+              </a>
+            </button>
+            <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'>
+              <a href="https://www.linkedin.com/in/deep-sarkar-92b453245/" target="_blank" rel="noopener noreferrer">
+
+                <FaLinkedinIn />
+              </a>
+
+            </button>
           </div>
 
         </div>
-
+        {/* copyright  */}
         <div className="bg-[#2C2C2C] rounded-lg flex flex-col mx-4  items-center justify-center text-sm ">
           <p className='text-[#C0C0C0]'>© 2024 All rights reserved. </p>
           <p className='text-[#C0C0C0]'>by - <u className='text-white'>Deep Sarkar</u> </p>

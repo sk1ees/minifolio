@@ -21,7 +21,7 @@ const Header = () => {
 
             </div>
             <div className="flex items-center justify-end gap-4 pe-5">
-                <p className='text-2xl text-gray-400'><FiSun /></p>
+                {/* <p className='text-2xl text-gray-400'><FiSun /></p> */}
                 <Link to={'/contact'}>
                     <button className='text-white bg-[#373737] p-2 px-3 rounded-lg flex gap-2 items-center'><CiCirclePlus />Hire Me</button>
                 </Link>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../components/Header.css'
 import { FaBehance, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { FiCopy } from 'react-icons/fi';
@@ -8,7 +8,11 @@ import { useGSAP } from '@gsap/react';
 import { Link } from 'react-router-dom';
 const About = () => {
     window.scrollTo(0, 0);
+    const [copy, setCopy] = useState('Copy Email');
 
+    function copyClipboard() {
+        navigator.clipboard.writeText('sarkarreall@gmail.com');
+    }
     const skillsItem = [
 
         {
@@ -139,7 +143,7 @@ const About = () => {
                                 <button className='py-2 px-3 rounded-lg bg-[#373737] text-sm font-bold text-white borderColor flex gap-3 items-center '><CiCirclePlus />Hire Me</button>
                             </Link>
 
-                            <button className='py-2 px-3 rounded-lg  text-sm font-bold text-white borderColor flex gap-3 items-center '><FiCopy />Copy Email</button>
+                            <button onClick={() => { setCopy("Copied!"), copyClipboard() }} className='py-2 px-3 rounded-lg  text-sm font-bold text-white borderColor flex gap-3 items-center '><FiCopy />{copy}</button>
                         </div>
                     </div>
                 </div>
@@ -152,9 +156,26 @@ const About = () => {
                     </div>
                     <div className="flex gap-3 text-white text-2xl">
 
-                        <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'><FaInstagram /></button>
-                        <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'><FaBehance /></button>
-                        <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'><FaLinkedinIn /></button>
+                   
+                        <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'>
+                            <a href="https://www.instagram.com/deeeprr/" target="_blank" rel="noopener noreferrer">
+                                <FaInstagram />
+                            </a>
+
+                        </button>
+                        <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'>
+                            <a href="https://www.behance.net/synccr" target="_blank" rel="noopener noreferrer">
+
+                                <FaBehance />
+                            </a>
+                        </button>
+                        <button className='bg-[#373737] w-[50px] h-[50px] flex items-center justify-center rounded-full'>
+                            <a href="https://www.linkedin.com/in/deep-sarkar-92b453245/" target="_blank" rel="noopener noreferrer">
+
+                                <FaLinkedinIn />
+                            </a>
+
+                        </button>
                     </div>
 
                 </div>

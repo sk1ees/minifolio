@@ -2,7 +2,10 @@
 
 * {
     font-family: "Inter", sans-serif;
+
 }
+
+
 
 .borderColor {
 
@@ -24,7 +27,7 @@
 }
 
 .contactcss {
-    grid-template-rows: repeat(1, 230px 600px 100px 200px 100px 100px);
+    grid-template-rows: repeat(1, 170px 350px 100px 100px);
 }
 
 .skillcss {
@@ -64,4 +67,8 @@
 .aboutImg {
     background: url('profile.jpeg');
     background-size: cover;
+}
+
+.formcss {
+    grid-template-rows: repeat(1, 60px 1fr 100px);
 }

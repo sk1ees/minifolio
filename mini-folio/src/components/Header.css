@@ -1,74 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 * {
-    font-family: "Inter", sans-serif;
-
+  font-family: "Inter", sans-serif;
 }
 
-
-
 .borderColor {
-
-    border: 2px solid #2c2c2c;
+  border: 2px solid #2c2c2c;
 }
 
 .homecss {
-
-    grid-template-rows: repeat(1, 300px 400px 300px 200px 90px 90px);
+  grid-template-rows: repeat(1, 300px 400px 300px 200px 90px 90px);
 }
 
 .aboutcss {
-
-    grid-template-rows: repeat(1, 300px 500px 400px 170px 250px 200px 100px 100px);
+  grid-template-rows: repeat(
+    1,
+    300px 500px 400px 170px 250px 200px 100px 100px
+  );
 }
 
 .projectcss {
-    grid-template-rows: repeat(1, 230px 600px 100px 200px 100px 100px);
+  grid-template-rows: repeat(1, 230px 600px 100px 200px 100px 100px);
 }
 
 .contactcss {
-    grid-template-rows: repeat(1, 170px 350px 100px 100px);
+  grid-template-rows: repeat(1, 170px 350px 100px 100px);
 }
 
 .skillcss {
-    grid-template-rows: repeat(1, 230px 600px 200px 100px 100px);
+  grid-template-rows: repeat(1, 230px 600px 200px 100px 100px);
 }
 
 .skillcssChild {
-    grid-template-rows: repeat(1, 1fr 1fr);
+  grid-template-rows: repeat(1, 1fr 1fr);
 }
 
 .projects {
-    grid-template-rows: repeat(1, 90px 1fr);
+  grid-template-rows: repeat(1, 90px 1fr);
 }
 
 .aboutProject {
-    grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
 .aboutme {
-    grid-template-rows: repeat(1, 50px 1fr);
-
+  grid-template-rows: repeat(1, 50px 1fr);
 }
 
 .aboutmeRight {
-    grid-template-columns: repeat(1, 1fr 220px);
+  grid-template-columns: repeat(1, 1fr 220px);
 }
 
 .profilePic {
-    background-image: url('https://framerusercontent.com/images/dDnqkzQfB3pmvEdrFSxAJSkAyyk.png');
-    background-size: cover;
+  background-image: url("https://framerusercontent.com/images/dDnqkzQfB3pmvEdrFSxAJSkAyyk.png");
+  background-size: cover;
 }
 
 .gridHomeTemplate {
-    grid-template-columns: repeat(1, 1fr 50px);
+  grid-template-columns: repeat(1, 1fr 50px);
 }
 
+
+
 .aboutImg {
-    background: url('https://cdn.discordapp.com/attachments/926282219071365142/1270364929169297449/profile.jpeg?ex=66b36f09&is=66b21d89&hm=35d07499e5115bd09283b22a0599fa85f3cd6704f51d2513a4504c0d647221d6&');
-    background-size: cover;
+  background: url("/profileImage.png");
+  background-size: cover;
 }
 
 .formcss {
-    grid-template-rows: repeat(1, 60px 1fr 100px);
+  grid-template-rows: repeat(1, 60px 1fr 100px);
 }

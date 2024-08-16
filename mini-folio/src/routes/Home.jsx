@@ -43,7 +43,7 @@ const Home = () => {
             title: "Freelance",
             desc: "video editing , web development",
             url: 'https://yt3.googleusercontent.com/Ws_BpAWD46mOjCW3XCnsZ0YmghW-6fhMf6d9pvCvb4g8JJftgvL54039U1mgh31OchR4ApMTezc=s900-c-k-c0x00ffffff-no-rj',
-
+            redirectURL: 'https://bento.me/synccr',
         },
         {
             title: "Projects",

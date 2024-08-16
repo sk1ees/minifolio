@@ -31,7 +31,7 @@ const About = () => {
             image: "https://miro.medium.com/v2/resize:fit:632/1*KTAstxDm8yEG17u94avrXw.png",
         },
         {
-            image: "https://cdn4.iconfinder.com/data/icons/logos-3/181/MySQL-64.png",
+            image: "https://www.svgrepo.com/show/331488/mongodb.svg",
         },
         {
             image: "https://cdn0.iconfinder.com/data/icons/designer-skills/128/node-js-512.png",

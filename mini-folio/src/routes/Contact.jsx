@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../components/Header.css'
 import { FaBehance, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { FiCopy, FiGithub } from 'react-icons/fi';
@@ -7,6 +7,11 @@ import { IoIosArrowForward } from 'react-icons/io';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 const Contact = () => {
+
+    useEffect(() => {
+        document.title = "Portfolio - Contact";
+      }, []);
+
     const projectData = [
         {
             project: "Awwward Portfolio Design",
